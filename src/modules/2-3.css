@@ -1,0 +1,231 @@
+/* 技術檔案指南模組樣式 */
+
+.technical-file-guide {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.technical-file-guide .header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+}
+
+.technical-file-guide .content-section {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.technical-file-guide .section-header {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  padding: 1.5rem;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.technical-file-guide .section-content {
+  padding: 1.5rem;
+}
+
+.technical-file-guide .requirement-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #28a745;
+}
+
+.technical-file-guide .requirement-item:hover {
+  background: #e9ecef;
+  transform: translateX(4px);
+  transition: all 0.3s ease;
+}
+
+.technical-file-guide .content-item {
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.technical-file-guide .content-header {
+  background: #f8f9fa;
+  padding: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.technical-file-guide .content-header:hover {
+  background: #e9ecef;
+}
+
+.technical-file-guide .content-number {
+  background: #007bff;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.875rem;
+  margin-right: 1rem;
+}
+
+.technical-file-guide .content-details {
+  padding: 1rem;
+  background: white;
+  border-top: 1px solid #e9ecef;
+}
+
+.technical-file-guide .detail-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+  padding-left: 2rem;
+}
+
+.technical-file-guide .detail-bullet {
+  width: 6px;
+  height: 6px;
+  background: #28a745;
+  border-radius: 50%;
+  margin-top: 0.5rem;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.technical-file-guide .partly-completed-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.technical-file-guide .mandatory-section {
+  background: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.technical-file-guide .not-mandatory-section {
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.technical-file-guide .section-title {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.technical-file-guide .mandatory-title {
+  color: #155724;
+}
+
+.technical-file-guide .not-mandatory-title {
+  color: #721c24;
+}
+
+.technical-file-guide .language-switcher {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.technical-file-guide .language-switcher:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.technical-file-guide .footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 2rem 0;
+  border-top: 1px solid #e9ecef;
+}
+
+.technical-file-guide .academy-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #6c757d;
+  font-size: 0.875rem;
+}
+
+.technical-file-guide .academy-icon {
+  width: 24px;
+  height: 24px;
+  background: #28a745;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .technical-file-guide .partly-completed-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .technical-file-guide .content-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .technical-file-guide .content-number {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* 動畫效果 */
+.technical-file-guide .content-details {
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.technical-file-guide .chevron-icon {
+  transition: transform 0.3s ease;
+}
+
+.technical-file-guide .chevron-icon.expanded {
+  transform: rotate(90deg);
+} 
