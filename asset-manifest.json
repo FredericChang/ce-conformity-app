@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ce-conformity-app/static/css/main.9efb5c52.css",
+    "main.js": "/ce-conformity-app/static/js/main.2e330289.js",
+    "static/js/453.460792c5.chunk.js": "/ce-conformity-app/static/js/453.460792c5.chunk.js",
+    "index.html": "/ce-conformity-app/index.html",
+    "main.9efb5c52.css.map": "/ce-conformity-app/static/css/main.9efb5c52.css.map",
+    "main.2e330289.js.map": "/ce-conformity-app/static/js/main.2e330289.js.map",
+    "453.460792c5.chunk.js.map": "/ce-conformity-app/static/js/453.460792c5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9efb5c52.css",
+    "static/js/main.2e330289.js"
+  ]
+}
