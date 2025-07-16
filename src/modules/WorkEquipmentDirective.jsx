@@ -1,9 +1,48 @@
 import React, { useState } from 'react';
 import { ChevronRight, ChevronDown, Globe, BookOpen, Shield, AlertTriangle, CheckCircle, Users, Wrench } from 'lucide-react';
 
+const TAB_GROUPS = [
+  {
+    label: {
+      en: 'General Principles',
+      zh: '一般原則'
+    },
+    sections: ['overview', 'definition', 'basicIdea']
+  },
+  {
+    label: {
+      en: 'Structure & Implementation',
+      zh: '結構與實施'
+    },
+    sections: ['structure', 'stepByStep']
+  },
+  {
+    label: {
+      en: 'Requirements',
+      zh: '要求'
+    },
+    sections: ['minimumRequirements', 'additionalRequirements']
+  },
+  {
+    label: {
+      en: 'Framework & Obligations',
+      zh: '框架與義務'
+    },
+    sections: ['framework', 'employerObligations', 'employeeObligations']
+  },
+  {
+    label: {
+      en: 'Risk & Legislation',
+      zh: '風險與立法'
+    },
+    sections: ['riskReduction', 'dutchLegislation']
+  }
+];
+
 const WorkEquipmentDirective = () => {
   const [language, setLanguage] = useState('en');
   const [expandedSections, setExpandedSections] = useState({});
+  const [selectedTab, setSelectedTab] = useState(0);
 
   const toggleSection = (section) => {
     setExpandedSections(prev => ({
@@ -308,6 +347,7 @@ const WorkEquipmentDirective = () => {
   };
 
   const currentContent = content[language];
+  const currentTabGroup = TAB_GROUPS[selectedTab];
 
   const getSectionIcon = (sectionKey) => {
     const icons = {
@@ -353,13 +393,28 @@ const WorkEquipmentDirective = () => {
         </div>
       </div>
 
+      {/* Tabs */}
+      <div className="max-w-6xl mx-auto px-4 pt-8">
+        <div className="flex space-x-2 md:space-x-4 border-b border-gray-200">
+          {TAB_GROUPS.map((tab, idx) => (
+            <button
+              key={idx}
+              onClick={() => setSelectedTab(idx)}
+              className={`px-4 py-2 font-semibold rounded-t-lg focus:outline-none transition-colors duration-200 ${selectedTab === idx ? 'bg-white border-x border-t border-b-0 border-gray-200 text-blue-600 shadow' : 'bg-gray-100 text-gray-600 hover:bg-white'}`}
+            >
+              {tab.label[language]}
+            </button>
+          ))}
+        </div>
+      </div>
+
       {/* Main Content */}
       <div className="max-w-6xl mx-auto px-4 py-8">
         <div className="grid gap-6">
-          {Object.entries(currentContent.sections).map(([sectionKey, section]) => {
+          {currentTabGroup.sections.map((sectionKey) => {
+            const section = currentContent.sections[sectionKey];
             const IconComponent = getSectionIcon(sectionKey);
             const isExpanded = expandedSections[sectionKey];
-            
             return (
               <div key={sectionKey} className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
                 <button
@@ -380,7 +435,6 @@ const WorkEquipmentDirective = () => {
                     )}
                   </div>
                 </button>
-                
                 {isExpanded && (
                   <div className="px-6 pb-6 pt-2 border-t border-gray-100 bg-gray-50">
                     <div className="prose max-w-none">
@@ -409,7 +463,6 @@ const WorkEquipmentDirective = () => {
             );
           })}
         </div>
-
         {/* Footer */}
         <div className="mt-12 text-center text-gray-600">
           <p className="text-sm">
