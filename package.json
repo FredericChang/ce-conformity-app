@@ -2,7 +2,7 @@
   "name": "ce-conformity-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://fredericchang.github.io/ce-conformity-app/",
+  "homepage": ".",
   "dependencies": {
     "@tailwindcss/forms": "^0.5.10",
     "@testing-library/dom": "^10.4.0",
