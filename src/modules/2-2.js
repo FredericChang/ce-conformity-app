@@ -1,34 +1,32 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import './2-2.css';
 
 const MachinerySafetyManual = () => {
-    const [currentLanguage, setCurrentLanguage] = useState('zh');
+    const { i18n } = useTranslation();
+    const currentLanguage = i18n.language && i18n.language.startsWith('zh') ? 'zh' : 'en';
     const [activeTab, setActiveTab] = useState('purpose');
 
-    const switchLanguage = (lang) => {
-        setCurrentLanguage(lang);
-    };
-
-    const showTab = (lang, tabId) => {
-        if (lang === currentLanguage) {
-            setActiveTab(tabId);
-        }
+    const showTab = (tabId) => {
+        setActiveTab(tabId);
     };
 
     return (
-        <div className="language-selector">
-            <button 
-                className={`lang-btn ${currentLanguage === 'zh' ? 'active' : ''}`} 
-                onClick={() => switchLanguage('zh')}
-            >
-                中文
-            </button>
-            <button 
-                className={`lang-btn ${currentLanguage === 'en' ? 'active' : ''}`} 
-                onClick={() => switchLanguage('en')}
-            >
-                English
-            </button>
+        <div className="machinery-safety-manual-page">
+            <div className="language-selector">
+                <button 
+                    className={`lang-btn ${currentLanguage === 'zh' ? 'active' : ''}`} 
+                    onClick={() => i18n.changeLanguage('zh')}
+                >
+                    中文
+                </button>
+                <button 
+                    className={`lang-btn ${currentLanguage === 'en' ? 'active' : ''}`} 
+                    onClick={() => i18n.changeLanguage('en')}
+                >
+                    English
+                </button>
+            </div>
 
             <div className="container">
                 {/* Chinese Content */}
@@ -42,43 +40,43 @@ const MachinerySafetyManual = () => {
                     <div className="nav-tabs">
                         <button 
                             className={`tab-btn ${activeTab === 'purpose' ? 'active' : ''}`} 
-                            onClick={() => showTab('zh', 'purpose')}
+                            onClick={() => showTab('purpose')}
                         >
                             目的與要求
                         </button>
                         <button 
                             className={`tab-btn ${activeTab === 'directive' ? 'active' : ''}`} 
-                            onClick={() => showTab('zh', 'directive')}
+                            onClick={() => showTab('directive')}
                         >
                             機械指令
                         </button>
                         <button 
                             className={`tab-btn ${activeTab === 'assembly' ? 'active' : ''}`} 
-                            onClick={() => showTab('zh', 'assembly')}
+                            onClick={() => showTab('assembly')}
                         >
                             組裝說明
                         </button>
                         <button 
                             className={`tab-btn ${activeTab === 'iso12100' ? 'active' : ''}`} 
-                            onClick={() => showTab('zh', 'iso12100')}
+                            onClick={() => showTab('iso12100')}
                         >
                             ISO 12100
                         </button>
                         <button 
                             className={`tab-btn ${activeTab === 'nen5509' ? 'active' : ''}`} 
-                            onClick={() => showTab('zh', 'nen5509')}
+                            onClick={() => showTab('nen5509')}
                         >
                             NEN 5509
                         </button>
                         <button 
                             className={`tab-btn ${activeTab === 'practical' ? 'active' : ''}`} 
-                            onClick={() => showTab('zh', 'practical')}
+                            onClick={() => showTab('practical')}
                         >
                             實作流程
                         </button>
                         <button 
                             className={`tab-btn ${activeTab === 'exercise' ? 'active' : ''}`} 
-                            onClick={() => showTab('zh', 'exercise')}
+                            onClick={() => showTab('exercise')}
                         >
                             練習
                         </button>
@@ -377,43 +375,43 @@ const MachinerySafetyManual = () => {
                     <div className="nav-tabs">
                         <button 
                             className={`tab-btn ${activeTab === 'purpose' ? 'active' : ''}`} 
-                            onClick={() => showTab('en', 'purpose')}
+                            onClick={() => showTab('purpose')}
                         >
                             Purpose & Requirements
                         </button>
                         <button 
                             className={`tab-btn ${activeTab === 'directive' ? 'active' : ''}`} 
-                            onClick={() => showTab('en', 'directive')}
+                            onClick={() => showTab('directive')}
                         >
                             Machinery Directive
                         </button>
                         <button 
                             className={`tab-btn ${activeTab === 'assembly' ? 'active' : ''}`} 
-                            onClick={() => showTab('en', 'assembly')}
+                            onClick={() => showTab('assembly')}
                         >
                             Assembly Instructions
                         </button>
                         <button 
                             className={`tab-btn ${activeTab === 'iso12100' ? 'active' : ''}`} 
-                            onClick={() => showTab('en', 'iso12100')}
+                            onClick={() => showTab('iso12100')}
                         >
                             ISO 12100
                         </button>
                         <button 
                             className={`tab-btn ${activeTab === 'nen5509' ? 'active' : ''}`} 
-                            onClick={() => showTab('en', 'nen5509')}
+                            onClick={() => showTab('nen5509')}
                         >
                             NEN 5509
                         </button>
                         <button 
                             className={`tab-btn ${activeTab === 'practical' ? 'active' : ''}`} 
-                            onClick={() => showTab('en', 'practical')}
+                            onClick={() => showTab('practical')}
                         >
                             Practical Process
                         </button>
                         <button 
                             className={`tab-btn ${activeTab === 'exercise' ? 'active' : ''}`} 
-                            onClick={() => showTab('en', 'exercise')}
+                            onClick={() => showTab('exercise')}
                         >
                             Exercise
                         </button>
@@ -700,11 +698,11 @@ const MachinerySafetyManual = () => {
                         </div>
                     </div>
                 </div>
-            </div>
 
             <div className="footer">
                 <p>© 2024 Kader Academy - Machinery Safety Specialist Training</p>
             </div>
+        </div>
         </div>
     );
 };

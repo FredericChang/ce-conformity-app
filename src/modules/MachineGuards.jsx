@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ChevronLeft, ChevronRight, Globe, Shield, Lock, Eye, AlertTriangle, Settings, CheckCircle, XCircle } from 'lucide-react';
 
 const MachineGuardsApp = () => {
-  const [language, setLanguage] = useState('en');
+  const { i18n } = useTranslation();
+  const language = i18n.language && i18n.language.startsWith('zh') ? 'zh' : 'en';
   const [currentSection, setCurrentSection] = useState(0);
 
   const translations = {
@@ -480,7 +482,7 @@ const MachineGuardsApp = () => {
               <p className="text-sm text-gray-600 mt-1">{t.subtitle}</p>
             </div>
             <button
-              onClick={() => setLanguage(language === 'en' ? 'zh' : 'en')}
+              onClick={() => i18n.changeLanguage(language === 'en' ? 'zh' : 'en')}
               className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
             >
               <Globe className="h-4 w-4" />

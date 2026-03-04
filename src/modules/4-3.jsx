@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Calculator, Settings, Shield, Hand, Ruler, AlertTriangle } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { Calculator, Settings, Shield, Hand, AlertTriangle } from 'lucide-react';
 
 const SafetyDistanceCalculator = () => {
-  const [language, setLanguage] = useState('zh');
+  const { i18n } = useTranslation();
+  const language = i18n.language && i18n.language.startsWith('zh') ? 'zh' : 'en';
   const [activeTab, setActiveTab] = useState('crushing');
 
   const translations = {
@@ -523,7 +525,7 @@ const SafetyDistanceCalculator = () => {
             <p className="text-gray-600 mt-2">{t.subtitle}</p>
           </div>
           <button
-            onClick={() => setLanguage(language === 'zh' ? 'en' : 'zh')}
+            onClick={() => i18n.changeLanguage(language === 'zh' ? 'en' : 'zh')}
             className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 flex items-center gap-2"
           >
             <Settings className="w-4 h-4" />

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ChevronLeft, ChevronRight, Globe, Calculator, Grid, BarChart3, Layers } from 'lucide-react';
 
 const RiskEstimationApp = () => {
-  const [language, setLanguage] = useState('en');
+  const { i18n } = useTranslation();
+  const language = i18n.language && i18n.language.startsWith('zh') ? 'zh' : 'en';
   const [currentMethod, setCurrentMethod] = useState('overview');
 
   const translations = {
@@ -717,7 +719,7 @@ const RiskEstimationApp = () => {
             </div>
             
             <button
-              onClick={() => setLanguage(language === 'en' ? 'zh' : 'en')}
+              onClick={() => i18n.changeLanguage(language === 'en' ? 'zh' : 'en')}
               className="flex items-center gap-2 bg-green-500 hover:bg-green-400 px-4 py-2 rounded-lg transition-colors"
             >
               <Globe className="w-4 h-4" />

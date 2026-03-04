@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ChevronRight, AlertTriangle, Info, Shield, Globe } from 'lucide-react';
 
 const MachinerySafetyInfo = () => {
-  const [language, setLanguage] = useState('en');
+  const { i18n } = useTranslation();
+  const language = i18n.language && i18n.language.startsWith('zh') ? 'zh' : 'en';
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const content = {
@@ -150,7 +152,7 @@ const MachinerySafetyInfo = () => {
   };
 
   const toggleLanguage = () => {
-    setLanguage(prev => prev === 'en' ? 'zh' : 'en');
+    i18n.changeLanguage(language === 'en' ? 'zh' : 'en');
   };
 
   return (

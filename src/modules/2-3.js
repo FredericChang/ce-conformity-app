@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { ChevronRight, ChevronDown, Globe, FileText, Shield, CheckCircle } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { ChevronRight, ChevronDown, FileText, Shield, CheckCircle } from 'lucide-react';
 import './2-3.css';
 
 const TechnicalFileGuide = () => {
-  const [language, setLanguage] = useState('en');
+  const { i18n } = useTranslation();
+  const language = i18n.language && i18n.language.startsWith('zh') ? 'zh' : 'en';
   const [expandedSections, setExpandedSections] = useState({});
 
   const toggleSection = (sectionId) => {
@@ -260,10 +262,9 @@ const TechnicalFileGuide = () => {
             </div>
             
             <button
-              onClick={() => setLanguage(language === 'en' ? 'zh' : 'en')}
+              onClick={() => i18n.changeLanguage(language === 'en' ? 'zh' : 'en')}
               className="flex items-center space-x-2 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
             >
-              <Globe size={18} />
               <span>{language === 'en' ? '中文' : 'English'}</span>
             </button>
           </div>

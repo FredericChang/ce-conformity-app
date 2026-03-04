@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ChevronLeft, ChevronRight, Globe } from 'lucide-react';
 
 const MachinerySafetyDocs = () => {
+  const { i18n } = useTranslation();
+  const language = i18n.language && i18n.language.startsWith('zh') ? 'zh' : 'en';
   const [currentSection, setCurrentSection] = useState(2);
-  const [language, setLanguage] = useState('en');
 
   const content = {
     en: {
@@ -145,7 +147,7 @@ const MachinerySafetyDocs = () => {
   };
 
   const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'zh' : 'en');
+    i18n.changeLanguage(language === 'en' ? 'zh' : 'en');
   };
 
   const renderSection2 = () => (

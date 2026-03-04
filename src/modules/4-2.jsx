@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ChevronLeft, ChevronRight, Globe, Book, Zap, Droplets, Wind } from 'lucide-react';
 
 const MachineSafetyCourse = () => {
+  const { i18n } = useTranslation();
+  const language = i18n.language && i18n.language.startsWith('zh') ? 'zh' : 'en';
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [language, setLanguage] = useState('en');
 
   const content = {
     en: {
@@ -276,7 +278,7 @@ const MachineSafetyCourse = () => {
   };
 
   const toggleLanguage = () => {
-    setLanguage(prev => prev === 'en' ? 'zh' : 'en');
+    i18n.changeLanguage(language === 'en' ? 'zh' : 'en');
   };
 
   const getIcon = (index) => {

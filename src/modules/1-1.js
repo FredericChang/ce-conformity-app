@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import './1-1.css';
 
 const MachineSafetyTraining = () => {
+    const { t, i18n } = useTranslation();
     const [activeTab, setActiveTab] = useState('tab1');
 
     const showTab = (tabId) => {
@@ -9,10 +11,10 @@ const MachineSafetyTraining = () => {
     };
 
     return (
-        <div className="container">
+        <div className="container" key={i18n.language}>
             <div className="header">
-                <h1>🛡️ 機械安全專家培訓</h1>
-                <p>Machine Safety Specialist (CE) - 完整TAB模組整理</p>
+                <h1>🛡️ {t('machineSafetyTraining.title')}</h1>
+                <p>{t('machineSafetyTraining.subtitle')}</p>
             </div>
 
             <div className="tabs-navigation">
@@ -20,99 +22,99 @@ const MachineSafetyTraining = () => {
                     className={`tab-btn ${activeTab === 'tab1' ? 'active' : ''}`} 
                     onClick={() => showTab('tab1')}
                 >
-                    TAB 1: CE標記立法
+                    {t('machineSafetyTraining.tab1')}
                 </button>
                 <button 
                     className={`tab-btn ${activeTab === 'tab2' ? 'active' : ''}`} 
                     onClick={() => showTab('tab2')}
                 >
-                    TAB 2: 符合性評估
+                    {t('machineSafetyTraining.tab2')}
                 </button>
                 <button 
                     className={`tab-btn ${activeTab === 'tab3' ? 'active' : ''}`} 
                     onClick={() => showTab('tab3')}
                 >
-                    TAB 3: 風險評估
+                    {t('machineSafetyTraining.tab3')}
                 </button>
                 <button 
                     className={`tab-btn ${activeTab === 'tab4' ? 'active' : ''}`} 
                     onClick={() => showTab('tab4')}
                 >
-                    TAB 4: 安全措施
+                    {t('machineSafetyTraining.tab4')}
                 </button>
                 <button 
                     className={`tab-btn ${activeTab === 'tab5' ? 'active' : ''}`} 
                     onClick={() => showTab('tab5')}
                 >
-                    TAB 5: 法律責任
+                    {t('machineSafetyTraining.tab5')}
                 </button>
                 <button 
                     className={`tab-btn ${activeTab === 'overview' ? 'active' : ''}`} 
                     onClick={() => showTab('overview')}
                 >
-                    📊 總覽對比
+                    {t('machineSafetyTraining.overview')}
                 </button>
             </div>
 
             <div className="content-area">
                 {/* TAB 1 Content */}
                 <div id="tab1" className={`tab-content ${activeTab === 'tab1' ? 'active' : ''}`}>
-                    <h2 className="tab-title">TAB 1: CE標記立法原則</h2>
+                    <h2 className="tab-title">{t('machineSafetyTraining.tab1Title')}</h2>
                     
                     <div className="highlight-box">
-                        <h3>🎯 核心概念</h3>
-                        <p><strong>Conformité Européenne</strong> - 確保歐洲經濟區內自由貿易的保證</p>
+                        <h3>{t('machineSafetyTraining.tab1CoreTitle')}</h3>
+                        <p><strong>Conformité Européenne</strong> - {t('machineSafetyTraining.tab1CoreDesc')}</p>
                     </div>
 
                     <div className="section">
-                        <h3>📊 荷蘭工作事故統計</h3>
+                        <h3>{t('machineSafetyTraining.tab1StatsTitle')}</h3>
                         <div className="stats-grid">
                             <div className="stat-card">
                                 <div className="stat-number">3,482</div>
-                                <div>2021年報告事故</div>
+                                <div>{t('machineSafetyTraining.stat1Label')}</div>
                             </div>
                             <div className="stat-card">
                                 <div className="stat-number">62</div>
-                                <div>2021年致命事故</div>
+                                <div>{t('machineSafetyTraining.stat2Label')}</div>
                             </div>
                             <div className="stat-card">
                                 <div className="stat-number">2</div>
-                                <div>主要事故類型</div>
-                                <small>墜落 & 機械接觸</small>
+                                <div>{t('machineSafetyTraining.stat3Label')}</div>
+                                <small>{t('machineSafetyTraining.stat3Small')}</small>
                             </div>
                         </div>
                     </div>
 
                     <div className="section">
-                        <h3>📜 機械指令演進歷史</h3>
+                        <h3>{t('machineSafetyTraining.tab1HistoryTitle')}</h3>
                         <table className="comparison-table">
                             <thead>
                                 <tr>
-                                    <th>指令版本</th>
-                                    <th>生效時間</th>
-                                    <th>狀態</th>
+                                    <th>{t('machineSafetyTraining.tableDirective')}</th>
+                                    <th>{t('machineSafetyTraining.tableEffective')}</th>
+                                    <th>{t('machineSafetyTraining.tableStatus')}</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>89/392/EEC</td>
-                                    <td>1995年1月</td>
-                                    <td>已廢止</td>
+                                    <td>{t('machineSafetyTraining.effectiveJan1995')}</td>
+                                    <td>{t('machineSafetyTraining.statusObsolete')}</td>
                                 </tr>
                                 <tr>
                                     <td>98/37/EG</td>
-                                    <td>1998年8月</td>
-                                    <td>已廢止</td>
+                                    <td>{t('machineSafetyTraining.effectiveAug1998')}</td>
+                                    <td>{t('machineSafetyTraining.statusObsolete')}</td>
                                 </tr>
                                 <tr>
                                     <td>2006/42/EG</td>
-                                    <td>2009年12月</td>
-                                    <td>現行有效</td>
+                                    <td>{t('machineSafetyTraining.effectiveDec2009')}</td>
+                                    <td>{t('machineSafetyTraining.statusCurrent')}</td>
                                 </tr>
                                 <tr>
-                                    <td>機械產品法規（續任者）</td>
-                                    <td>預計2025年</td>
-                                    <td>草案階段</td>
+                                    <td>{t('machineSafetyTraining.machineryRegulation')}</td>
+                                    <td>{t('machineSafetyTraining.expected2025')}</td>
+                                    <td>{t('machineSafetyTraining.statusDraft')}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -351,11 +353,11 @@ const MachineSafetyTraining = () => {
 
                 {/* TAB 2 Content */}
                 <div id="tab2" className={`tab-content ${activeTab === 'tab2' ? 'active' : ''}`}>
-                    <h2 className="tab-title">TAB 2: 符合性評估與文件</h2>
+                    <h2 className="tab-title">{t('machineSafetyTraining.tab2Title')}</h2>
                     
                     <div className="highlight-box">
-                        <h3>📋 核心目標</h3>
-                        <p>確保產品符合歐盟法規要求，建立完整的技術文件體系</p>
+                        <h3>{t('machineSafetyTraining.tab2CoreTitle')}</h3>
+                        <p>{t('machineSafetyTraining.tab2CoreDesc')}</p>
                     </div>
 
                     <div className="section">
@@ -415,11 +417,11 @@ const MachineSafetyTraining = () => {
 
                 {/* TAB 3 Content */}
                 <div id="tab3" className={`tab-content ${activeTab === 'tab3' ? 'active' : ''}`}>
-                    <h2 className="tab-title">TAB 3: 風險評估</h2>
+                    <h2 className="tab-title">{t('machineSafetyTraining.tab3Title')}</h2>
                     
                     <div className="highlight-box">
-                        <h3>🎯 風險評估核心</h3>
-                        <p>根據EN-ISO 12100標準，系統性識別、評估和降低機械風險</p>
+                        <h3>{t('machineSafetyTraining.tab3CoreTitle')}</h3>
+                        <p>{t('machineSafetyTraining.tab3CoreDesc')}</p>
                     </div>
 
                     <div className="section">
@@ -462,11 +464,11 @@ const MachineSafetyTraining = () => {
 
                 {/* TAB 4 Content */}
                 <div id="tab4" className={`tab-content ${activeTab === 'tab4' ? 'active' : ''}`}>
-                    <h2 className="tab-title">TAB 4: 安全措施與設計</h2>
+                    <h2 className="tab-title">{t('machineSafetyTraining.tab4Title')}</h2>
                     
                     <div className="highlight-box">
-                        <h3>🛡️ 風險降低強制順序</h3>
-                        <p>機械指令規定的三步驟風險降低方法</p>
+                        <h3>{t('machineSafetyTraining.tab4CoreTitle')}</h3>
+                        <p>{t('machineSafetyTraining.tab4CoreDesc')}</p>
                     </div>
 
                     <div className="section">
@@ -541,11 +543,11 @@ const MachineSafetyTraining = () => {
 
                 {/* TAB 5 Content */}
                 <div id="tab5" className={`tab-content ${activeTab === 'tab5' ? 'active' : ''}`}>
-                    <h2 className="tab-title">TAB 5: 法律責任與工作設備指令</h2>
+                    <h2 className="tab-title">{t('machineSafetyTraining.tab5Title')}</h2>
                     
                     <div className="highlight-box">
-                        <h3>⚖️ 責任體系</h3>
-                        <p>產品責任與工作場所安全責任的雙重體系</p>
+                        <h3>{t('machineSafetyTraining.tab5CoreTitle')}</h3>
+                        <p>{t('machineSafetyTraining.tab5CoreDesc')}</p>
                     </div>
 
                     <div className="section">
@@ -612,11 +614,11 @@ const MachineSafetyTraining = () => {
 
                 {/* Overview Content */}
                 <div id="overview" className={`tab-content ${activeTab === 'overview' ? 'active' : ''}`}>
-                    <h2 className="tab-title">📊 總覽對比</h2>
+                    <h2 className="tab-title">{t('machineSafetyTraining.overviewTitle')}</h2>
                     
                     <div className="highlight-box">
-                        <h3>🎯 完整學習路徑</h3>
-                        <p>從法律框架到實際應用的系統性學習體系</p>
+                        <h3>{t('machineSafetyTraining.overviewCoreTitle')}</h3>
+                        <p>{t('machineSafetyTraining.overviewCoreDesc')}</p>
                     </div>
 
                     <div className="section">
@@ -686,7 +688,7 @@ const MachineSafetyTraining = () => {
             </div>
 
             <div className="footer">
-                <p>© 2025 機械安全專家培訓資料整理 | 持續更新中...</p>
+                <p>{t('machineSafetyTraining.footer')}</p>
             </div>
         </div>
     );

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ChevronLeft, ChevronRight, Globe, Shield, AlertTriangle, Settings, CheckCircle, XCircle } from 'lucide-react';
 
 const FunctionalSafetyPresentation = () => {
+  const { i18n } = useTranslation();
+  const language = i18n.language && i18n.language.startsWith('zh') ? 'zh' : 'en';
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [language, setLanguage] = useState('zh');
 
   const content = {
     zh: {
@@ -242,7 +244,7 @@ const FunctionalSafetyPresentation = () => {
   };
 
   const toggleLanguage = () => {
-    setLanguage(prev => prev === 'zh' ? 'en' : 'zh');
+    i18n.changeLanguage(language === 'zh' ? 'en' : 'zh');
   };
 
   return (

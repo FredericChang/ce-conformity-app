@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ChevronDown, ChevronRight, Globe, Power, Square, RotateCcw, AlertTriangle, Shield, Settings } from 'lucide-react';
 
 const MachineSafetyModule = () => {
-  const [language, setLanguage] = useState('en');
+  const { i18n } = useTranslation();
+  const language = i18n.language && i18n.language.startsWith('zh') ? 'zh' : 'en';
   const [expandedSections, setExpandedSections] = useState({});
 
   const toggleSection = (section) => {
@@ -420,7 +422,7 @@ const MachineSafetyModule = () => {
             <p className="text-gray-600">{currentContent.tabInfo}</p>
           </div>
           <button
-            onClick={() => setLanguage(language === 'en' ? 'zh' : 'en')}
+            onClick={() => i18n.changeLanguage(language === 'en' ? 'zh' : 'en')}
             className="flex items-center space-x-2 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors"
           >
             <Globe className="w-4 h-4" />

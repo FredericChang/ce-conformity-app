@@ -1,65 +1,67 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './1-2.css';
 
 const MachineryModificationGuide = () => {
+  const { t } = useTranslation();
   return (
     <div className="container">
       <div className="header">
-        <h1>🔧 現有機械改造指南</h1>
-        <p>Modifying Existing Machinery - 重大修改判斷與合規要求</p>
+        <h1>🔧 {t('machineryModification.title')}</h1>
+        <p>{t('machineryModification.subtitle')}</p>
       </div>
 
       <div className="key-principle">
-        <h3>🎯 核心原則</h3>
-        <p>當現有機械進行修改時，關鍵問題是：<strong>「這個修改是否構成重大修改（Substantial Modification）？」</strong></p>
-        <p>如果是重大修改，修改者將成為新的製造商，必須重新進行CE符合性評估。</p>
+        <h3>🎯 {t('machineryModification.corePrinciple')}</h3>
+        <p>{t('machineryModification.coreLead')}<strong>{t('machineryModification.coreBold')}</strong></p>
+        <p>{t('machineryModification.coreDesc')}</p>
       </div>
 
       <div className="definition-box">
-        <h4>🔍 重大修改定義（根據藍皮書指南）</h4>
-        <p>產品的修改被認為是<strong>重大修改</strong>，當它：</p>
+        <h4>🔍 {t('machineryModification.definitionTitle')}</h4>
+        <p>{t('machineryModification.definitionLead')}</p>
         <ol style={{ marginTop: '10px' }}>
-          <li><strong>改變原始性能、目的或類型</strong>，且原始風險評估中未考慮到</li>
-          <li><strong>改變危險性質或增加風險水平</strong>，需參考相關歐盟協調法規</li>
-          <li><strong>使產品重新投放市場或投入使用</strong></li>
+          <li><strong>{t('machineryModification.def1')}</strong></li>
+          <li><strong>{t('machineryModification.def2')}</strong></li>
+          <li><strong>{t('machineryModification.def3')}</strong></li>
         </ol>
       </div>
 
       <div className="flowchart">
-        <h3>🤔 重大修改判斷流程</h3>
+        <h3>🤔 {t('machineryModification.flowTitle')}</h3>
         <div className="flow-step">
           <div className="step-number">1</div>
           <div className="content">
-            <div className="question">修改是否改變機械的性能、目的或類型？</div>
-            <div>例：手動機械改為CNC控制</div>
+            <div className="question">{t('machineryModification.q1')}</div>
+            <div>{t('machineryModification.q1ex')}</div>
           </div>
         </div>
         <div className="flow-step">
           <div className="step-number">2</div>
           <div className="content">
-            <div className="question">修改是否引入新的危險或增加現有風險？</div>
-            <div>例：增加自動操作功能</div>
+            <div className="question">{t('machineryModification.q2')}</div>
+            <div>{t('machineryModification.q2ex')}</div>
           </div>
         </div>
         <div className="flow-step">
           <div className="step-number">3</div>
           <div className="content">
-            <div className="question">修改是否改變安全策略？</div>
-            <div>例：用光幕取代物理防護</div>
+            <div className="question">{t('machineryModification.q3')}</div>
+            <div>{t('machineryModification.q3ex')}</div>
           </div>
         </div>
         <div className="flow-step">
           <div className="step-number">4</div>
           <div className="content">
-            <div className="question">機械是否需要重新投放市場？</div>
-            <div>例：修改後轉售給其他用戶</div>
+            <div className="question">{t('machineryModification.q4')}</div>
+            <div>{t('machineryModification.q4ex')}</div>
           </div>
         </div>
       </div>
 
       <div className="decision-matrix">
         <div className="matrix-card substantial">
-          <h4>❌ 重大修改情況</h4>
+          <h4>❌ {t('machineryModification.substantialTitle')}</h4>
           <ul className="feature-list">
             <li>手動機械改為CNC控制</li>
             <li>增加自動化功能</li>
@@ -70,7 +72,7 @@ const MachineryModificationGuide = () => {
           </ul>
         </div>
         <div className="matrix-card non-substantial">
-          <h4>✅ 非重大修改情況</h4>
+          <h4>✅ {t('machineryModification.nonSubstantialTitle')}</h4>
           <ul className="feature-list">
             <li>更換相同規格零件</li>
             <li>常規維護和保養</li>
@@ -251,8 +253,8 @@ const MachineryModificationGuide = () => {
       </div>
 
       <div className="key-principle">
-        <h3>💡 總結</h3>
-        <p>機械修改的合規性取決於修改的<strong>性質和程度</strong>，而非修改的<strong>規模大小</strong>。即使是小的修改，如果改變了安全特性，也可能構成重大修改。相反，大規模的同類零件更換可能不構成重大修改。關鍵是要<strong>誠實評估風險影響</strong>。</p>
+        <h3>💡 {t('machineryModification.summaryTitle')}</h3>
+        <p>{t('machineryModification.summary')}</p>
       </div>
     </div>
   );

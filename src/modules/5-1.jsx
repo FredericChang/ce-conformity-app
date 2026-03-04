@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ChevronRight, ChevronDown, Globe, BookOpen, Shield, AlertTriangle, CheckCircle, Users, Wrench } from 'lucide-react';
 
 const WorkEquipmentDirective = () => {
-  const [language, setLanguage] = useState('en');
+  const { i18n } = useTranslation();
+  const language = i18n.language && i18n.language.startsWith('zh') ? 'zh' : 'en';
   const [expandedSections, setExpandedSections] = useState({});
 
   const toggleSection = (section) => {
@@ -343,7 +345,7 @@ const WorkEquipmentDirective = () => {
               </div>
             </div>
             <button
-              onClick={() => setLanguage(language === 'en' ? 'zh' : 'en')}
+              onClick={() => i18n.changeLanguage(language === 'en' ? 'zh' : 'en')}
               className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-green-400 to-blue-500 text-white rounded-lg hover:from-green-500 hover:to-blue-600 transition-all duration-200 shadow-md"
             >
               <Globe className="w-4 h-4" />

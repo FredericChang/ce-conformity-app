@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ChevronDown, ChevronRight, Globe, AlertTriangle, Users, Eye, Clock, Zap, Shield, BookOpen } from 'lucide-react';
 
 const RiskAssessmentProcess = () => {
-  const [language, setLanguage] = useState('en');
+  const { i18n } = useTranslation();
+  const language = i18n.language && i18n.language.startsWith('zh') ? 'zh' : 'en';
   const [expandedSections, setExpandedSections] = useState({});
 
   const content = {
@@ -179,7 +181,7 @@ const RiskAssessmentProcess = () => {
             </div>
           </div>
           <button
-            onClick={() => setLanguage(language === 'en' ? 'zh' : 'en')}
+            onClick={() => i18n.changeLanguage(language === 'en' ? 'zh' : 'en')}
             className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
           >
             <Globe className="w-4 h-4" />
