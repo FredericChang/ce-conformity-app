@@ -16,6 +16,7 @@ export { default as MachineGuards } from './MachineGuards';
 export { default as FunctionalSafety } from './FunctionalSafety';
 export { default as MachineAccessSafety } from './4-6';
 export { default as MachineSafetyModule } from './4-7';
+export { default as WorkEquipmentDirective } from './5-1';
 
 // 模組配置 - 定義模組的元數據
 export const moduleConfig = {

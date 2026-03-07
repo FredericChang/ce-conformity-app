@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ChevronRight, FileText, CheckCircle, AlertTriangle, Info, Globe, Menu, X, Shield, GraduationCap, Wrench, Zap, Calculator } from 'lucide-react';
-import { RiskAssessment, TechnicalFile, Inspection, MachineSafetyTraining, MachineryModificationGuide, MachinerySafetyManual, TechnicalFileGuide, MachinerySafetyDocs, MachinerySafetyInfo, RiskAssessmentProcess, RiskReductionPrinciples, MachineSafetyCourse, SafetyDistanceCalculator, MachineGuards, FunctionalSafety, MachineAccessSafety, MachineSafetyModule, getModulesByLanguage } from './modules';
+import { RiskAssessment, TechnicalFile, Inspection, MachineSafetyTraining, MachineryModificationGuide, MachinerySafetyManual, TechnicalFileGuide, MachinerySafetyDocs, MachinerySafetyInfo, RiskAssessmentProcess, RiskReductionPrinciples, MachineSafetyCourse, SafetyDistanceCalculator, MachineGuards, FunctionalSafety, MachineAccessSafety, MachineSafetyModule, WorkEquipmentDirective, getModulesByLanguage } from './modules';
 
 const CEConformityApp = () => {
   const { t, i18n } = useTranslation();
@@ -303,10 +303,13 @@ const CEConformityApp = () => {
         return <MachineAccessSafety />;
       case 'machineSafetyModule':
         return <MachineSafetyModule />;
+      case 'technicalFile':
       case 'technicalFileModule':
         return <TechnicalFile />;
       case 'inspection':
         return <Inspection />;
+      case 'practical':
+        return <WorkEquipmentDirective />;
       default:
         return (
           <div className="text-center py-12">
@@ -340,17 +343,16 @@ const CEConformityApp = () => {
       </div>
 
       {/* Sidebar */}
-      <div className={`fixed inset-y-0 left-0 z-40 w-64 bg-white shadow-xl transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-0 lg:flex-shrink-0 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
-        <div className="flex flex-col h-full">
-          {/* Header */}
-          <div className="p-6 border-b border-gray-200">
-            <h1 className="text-xl font-bold text-gray-800">{t('title')}</h1>
-            <p className="text-sm text-gray-600 mt-1">{t('subtitle')}</p>
-            <p className="text-xs text-gray-500 mt-1">{t('description')}</p>
-          </div>
+      <div className={`fixed inset-y-0 left-0 z-40 w-64 bg-white shadow-xl transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-0 lg:flex-shrink-0 flex flex-col h-full max-h-screen ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+        {/* Header - 不捲動 */}
+        <div className="flex-shrink-0 p-6 border-b border-gray-200">
+          <h1 className="text-xl font-bold text-gray-800">{t('title')}</h1>
+          <p className="text-sm text-gray-600 mt-1">{t('subtitle')}</p>
+          <p className="text-xs text-gray-500 mt-1">{t('description')}</p>
+        </div>
 
-          {/* Navigation */}
-          <nav className="flex-1 p-4 space-y-2">
+        {/* Navigation - 可捲動 */}
+        <nav className="flex-1 min-h-0 overflow-y-auto p-4 space-y-2">
             <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">
               {t('navigation')}
             </h3>
@@ -371,8 +373,7 @@ const CEConformityApp = () => {
                 <ChevronRight className={`w-4 h-4 transition-transform ${activeSection === key ? 'rotate-90' : ''}`} />
               </button>
             ))}
-          </nav>
-        </div>
+        </nav>
       </div>
 
       {/* Main content */}

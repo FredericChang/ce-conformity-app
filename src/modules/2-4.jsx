@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight, Globe } from 'lucide-react';
 const MachinerySafetyDocs = () => {
   const { i18n } = useTranslation();
   const language = i18n.language && i18n.language.startsWith('zh') ? 'zh' : 'en';
-  const [currentSection, setCurrentSection] = useState(2);
+  const [currentSection, setCurrentSection] = useState(1);
 
   const content = {
     en: {
@@ -13,7 +13,7 @@ const MachinerySafetyDocs = () => {
       subtitle: "Tab 2: CE-process and documentation",
       module: "Module 4: Declaration of conformity",
       sections: {
-        2: {
+        1: {
           title: "Declarations",
           content: {
             main: "For 1 product or for a series of products",
@@ -27,7 +27,7 @@ const MachinerySafetyDocs = () => {
             note: "you can assign someone to assign."
           }
         },
-        3: {
+        2: {
           title: "Declarations",
           subtitle: "According to Machinery Directive, annex II",
           content: {
@@ -49,7 +49,7 @@ const MachinerySafetyDocs = () => {
             ]
           }
         },
-        4: {
+        3: {
           title: "EC –Declaration of conformity",
           subtitle: "According to Machinery Directive, annex II.1.a",
           content: {
@@ -74,7 +74,7 @@ const MachinerySafetyDocs = () => {
       subtitle: "選項卡 2：CE 流程和文件",
       module: "模組 4：符合性聲明",
       sections: {
-        2: {
+        1: {
           title: "聲明",
           content: {
             main: "適用於單一產品或系列產品",
@@ -88,7 +88,7 @@ const MachinerySafetyDocs = () => {
             note: "您可以指派他人進行指派。"
           }
         },
-        3: {
+        2: {
           title: "聲明",
           subtitle: "根據機械指令，附錄 II",
           content: {
@@ -110,7 +110,7 @@ const MachinerySafetyDocs = () => {
             ]
           }
         },
-        4: {
+        3: {
           title: "EC 符合性聲明",
           subtitle: "根據機械指令，附錄 II.1.a",
           content: {
@@ -135,13 +135,13 @@ const MachinerySafetyDocs = () => {
   const currentContent = content[language];
 
   const nextSection = () => {
-    if (currentSection < 4) {
+    if (currentSection < 3) {
       setCurrentSection(currentSection + 1);
     }
   };
 
   const prevSection = () => {
-    if (currentSection > 2) {
+    if (currentSection > 1) {
       setCurrentSection(currentSection - 1);
     }
   };
@@ -150,17 +150,17 @@ const MachinerySafetyDocs = () => {
     i18n.changeLanguage(language === 'en' ? 'zh' : 'en');
   };
 
-  const renderSection2 = () => (
+  const renderSection1 = () => (
     <div className="space-y-6">
       <div className="bg-blue-50 p-6 rounded-lg">
         <h3 className="text-xl font-semibold mb-4 text-blue-800">
-          {currentContent.sections[2].title}
+          {currentContent.sections[1].title}
         </h3>
         <p className="text-lg mb-4 text-gray-700">
-          {currentContent.sections[2].content.main}
+          {currentContent.sections[1].content.main}
         </p>
         <ul className="space-y-2">
-          {currentContent.sections[2].content.points.map((point, index) => (
+          {currentContent.sections[1].content.points.map((point, index) => (
             <li key={index} className="flex items-start">
               <span className="text-blue-600 font-bold mr-2">•</span>
               <span className={index < 2 ? "bg-yellow-200 px-1" : ""}>{point}</span>
@@ -168,22 +168,22 @@ const MachinerySafetyDocs = () => {
           ))}
         </ul>
         <div className="mt-4 p-3 bg-blue-100 rounded border-l-4 border-blue-500">
-          <p className="text-blue-700 italic">{currentContent.sections[2].content.note}</p>
+          <p className="text-blue-700 italic">{currentContent.sections[1].content.note}</p>
         </div>
       </div>
     </div>
   );
 
-  const renderSection3 = () => (
+  const renderSection2 = () => (
     <div className="space-y-6">
       <div className="bg-green-50 p-6 rounded-lg">
         <h3 className="text-xl font-semibold mb-2 text-green-800">
-          {currentContent.sections[3].title}
+          {currentContent.sections[2].title}
         </h3>
-        <p className="text-gray-600 mb-6">{currentContent.sections[3].subtitle}</p>
+        <p className="text-gray-600 mb-6">{currentContent.sections[2].subtitle}</p>
         
         <div className="space-y-4">
-          {currentContent.sections[3].content.sections.map((section, index) => (
+          {currentContent.sections[2].content.sections.map((section, index) => (
             <div key={index} className="border-l-4 border-green-500 pl-4">
               <h4 className={`font-semibold mb-2 ${index === 1 ? 'bg-yellow-200 px-2 py-1 inline-block' : 'text-green-700'}`}>
                 {section.title}
@@ -202,16 +202,16 @@ const MachinerySafetyDocs = () => {
     </div>
   );
 
-  const renderSection4 = () => (
+  const renderSection3 = () => (
     <div className="space-y-6">
       <div className="bg-purple-50 p-6 rounded-lg">
         <h3 className="text-xl font-semibold mb-2 text-purple-800">
-          {currentContent.sections[4].title}
+          {currentContent.sections[3].title}
         </h3>
-        <p className="text-gray-600 mb-6">{currentContent.sections[4].subtitle}</p>
+        <p className="text-gray-600 mb-6">{currentContent.sections[3].subtitle}</p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {currentContent.sections[4].content.requirements.map((req, index) => (
+          {currentContent.sections[3].content.requirements.map((req, index) => (
             <div key={index} className="flex items-start p-3 bg-white rounded border border-purple-200">
               <span className="bg-purple-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">
                 {index + 1}
@@ -226,14 +226,14 @@ const MachinerySafetyDocs = () => {
 
   const renderCurrentSection = () => {
     switch (currentSection) {
+      case 1:
+        return renderSection1();
       case 2:
         return renderSection2();
       case 3:
         return renderSection3();
-      case 4:
-        return renderSection4();
       default:
-        return renderSection2();
+        return renderSection1();
     }
   };
 
@@ -266,9 +266,9 @@ const MachinerySafetyDocs = () => {
       <div className="flex justify-between items-center mb-6">
         <button
           onClick={prevSection}
-          disabled={currentSection === 2}
+          disabled={currentSection === 1}
           className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors ${
-            currentSection === 2
+            currentSection === 1
               ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
               : 'bg-blue-500 text-white hover:bg-blue-600'
           }`}
@@ -278,7 +278,7 @@ const MachinerySafetyDocs = () => {
         </button>
 
         <div className="flex space-x-2">
-          {[2, 3, 4].map((section) => (
+          {[1, 2, 3].map((section) => (
             <button
               key={section}
               onClick={() => setCurrentSection(section)}
@@ -295,9 +295,9 @@ const MachinerySafetyDocs = () => {
 
         <button
           onClick={nextSection}
-          disabled={currentSection === 4}
+          disabled={currentSection === 3}
           className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors ${
-            currentSection === 4
+            currentSection === 3
               ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
               : 'bg-blue-500 text-white hover:bg-blue-600'
           }`}

@@ -89,6 +89,76 @@ const WorkEquipmentDirective = () => {
             "• Electricity"
           ]
         },
+        question51: {
+          title: "Question 5-1: Annex I subjects – differences and similarities",
+          content: [
+            "What are the differences and similarities with the subjects on which the Machinery Directive sets requirements in Annex I?",
+            "",
+            "Subjects (Annex I / general minimum requirements):",
+            "• Service",
+            "• Start/stop",
+            "• Strength/stability",
+            "• Moving parts",
+            "• Lighting",
+            "• Temperature",
+            "• Alarm",
+            "• Maintenance, installation, (dis)assembly",
+            "• Warnings",
+            "• Fire/explosion",
+            "• Electricity",
+            "",
+            "Answer – Similarities:",
+            "• All are part of Annex I “essential health and safety requirements”; the manufacturer must satisfy them in design and construction.",
+            "• All are risk-based: risk assessment (e.g. EN ISO 12100) drives the choice of measures.",
+            "• All must be documented in the technical file and in the conformity assessment.",
+            "• Most combine “design + information for use” (instructions, warnings, maintenance).",
+            "",
+            "Answer – Differences:",
+            "• Start/stop: Has its own Annex I subsections (e.g. 1.2.2 start, 1.2.3 stop) with explicit requirements for normal/abnormal stop and emergency stop.",
+            "• Moving parts: Tightly linked to guards (fixed, adjustable, interlocked) and often to safety distances (e.g. EN ISO 13857).",
+            "• Electricity: Often overlaps with the Low Voltage Directive; electrical safety has its own sub-requirements.",
+            "• Fire/explosion: In explosive atmospheres, ATEX etc. apply; otherwise general fire and overheating protection.",
+            "• Strength/stability: More “structural/geometric” (stability, mechanical strength); less about controls or interfaces.",
+            "• Lighting / Temperature: More about working environment and ergonomics (operator position, visibility, comfort).",
+            "• Alarm / Warnings: Part of “information and signals”; alarms are audible/visible safety-related signals; warnings are in the manual and labels.",
+            "• Maintenance, installation, (dis)assembly: Annex I requires that these can be done safely; often linked to access, lockout, and instructions.",
+            "• Service: Broad (operation, setup, maintenance, troubleshooting); in Annex I it is spread across “operation”, “maintenance”, “information for use”."
+          ]
+        },
+        exercise52: {
+          title: "Exercise 5-2",
+          content: [
+            "Test the following situation against the literal Minimum Requirements text. Does the work equipment comply with:",
+            "",
+            "Work Equipment Directive, par. 2.8 (Working Conditions Decree 7.7):",
+            "\"Where moving parts of work equipment are liable to come into contact with mechanical accidents, they must be fitted with screens or devices designed to prevent access to danger zones or to stop the movement of dangerous parts before they reach them.\"",
+            "",
+            "Scenario:",
+            "• The area around the discharge belts may be disregarded.",
+            "• Both conveyor belts are accessible.",
+            "",
+            "Answer:",
+            "No. Various dangerous movements (crushing by chain/sprocket and belt/roller) are accessible and not equipped with screens or protective devices."
+          ]
+        },
+        exercise53: {
+          title: "Exercise 5-3",
+          content: [
+            "Test the following situation against the literal Minimum Requirements text.",
+            "Does the work equipment comply with:",
+            "",
+            "Work Equipment Directive, par. 2.4 (Working Conditions Decree 7.16):",
+            "\"If this is necessary in view of the hazards of the work equipment and the normal switch-off time, work equipment must be equipped with an emergency stop device.\"",
+            "",
+            "Scenario:",
+            "• The green button on the control panel of the press brake works according to the control requirements of an emergency stop device.",
+            "",
+            "Answer:",
+            "Yes. The work equipment is equipped with an emergency stop device.",
+            "",
+            "PS. Work Equipment Directive, section 2.1 is not complied with."
+          ]
+        },
         additionalRequirements: {
           title: "Additional Requirements",
           content: [
@@ -157,6 +227,24 @@ const WorkEquipmentDirective = () => {
             "• Health and Safety Catalogue",
             "• Arbo Information sheets",
             "• European standards"
+          ]
+        },
+        exercise54: {
+          title: "Exercise 5-4",
+          content: [
+            "Answer the questions below:",
+            "",
+            "1. What is meant by work equipment?",
+            "Answer: Work equipment means any machinery, equipment, tool or installation used at the workplace (Work Equipment Directive 2009/104/EC, Art. 2). Examples: hand tools, production machinery, forklifts, industrial installations.",
+            "",
+            "2. Name a number of topics (regulations) that are covered in the Work Equipment Directive.",
+            "Answer: Topics covered include: service; start/stop; strength/stability; moving parts; lighting; temperature; alarm; maintenance, installation, (dis)assembly; warnings; fire/explosion; electricity (Attachment 1 – minimum requirements). Plus additional requirements for mobile work equipment, lifting/hoisting equipment, and temporary work at height.",
+            "",
+            "3. Where in Dutch law can the Work Equipment Directive be found?",
+            "Answer: The Work Equipment Directive (2009/104/EC) is transposed into Dutch law in the Working Conditions Act (Arbowet) and the Working Conditions Decree (Arbobesluit), in particular Chapter 7 on work equipment.",
+            "",
+            "4. The Work Equipment Directive is a specific directive for work equipment. What is the overarching Directive?",
+            "Answer: The overarching directive is the Framework Directive 89/391/EEC on the introduction of measures to encourage improvements in the safety and health of workers at work. The employer is responsible for ensuring workers’ safety and health; the Work Equipment Directive is one of the individual directives under this framework."
           ]
         }
       }
@@ -235,6 +323,76 @@ const WorkEquipmentDirective = () => {
             "• 電氣"
           ]
         },
+        question51: {
+          title: "題目 5-1：附錄 I 主題的異同",
+          content: [
+            "機械指令在附錄 I 中對下列主題設定了要求，這些主題之間有何異同？",
+            "",
+            "主題（附錄 I／一般最低要求）：",
+            "• 服務",
+            "• 啟動/停止",
+            "• 強度/穩定性",
+            "• 移動部件",
+            "• 照明",
+            "• 溫度",
+            "• 警報",
+            "• 維護、安裝、（拆）組裝",
+            "• 警告",
+            "• 火災/爆炸",
+            "• 電氣",
+            "",
+            "答案 — 相同點：",
+            "• 皆屬附錄 I「基本健康與安全要求」的一環，製造商須在設計與製造時一併滿足。",
+            "• 皆以風險為本：依風險評估（如 EN ISO 12100）決定採取的措施。",
+            "• 皆須在技術檔案與符合性評估中說明。",
+            "• 多數結合「設計＋使用資訊」（說明書、警告、維護）。",
+            "",
+            "答案 — 相異點：",
+            "• 啟動/停止：附錄 I 有專門小節（如 1.2.2 啟動、1.2.3 停止），對正常/異常停止與緊急停止有明確要求。",
+            "• 移動部件：與防護（固定/可調/聯鎖）緊密連結，常涉及安全距離（如 EN ISO 13857）。",
+            "• 電氣：常與低電壓指令重疊，電氣安全有獨立子項要求。",
+            "• 火災/爆炸：潛在爆炸環境須符合 ATEX 等；一般為防火與過熱防護。",
+            "• 強度/穩定性：偏結構與幾何（穩定性、機械強度），較少涉及控制或介面。",
+            "• 照明／溫度：偏工作環境與人因（操作員位置、視野、舒適性）。",
+            "• 警報／警告：屬「使用資訊與信號」；警報為可聽/可視的安全相關信號，警告見於說明書與標示。",
+            "• 維護、安裝、（拆）組裝：附錄 I 要求能安全執行，常與通道、上鎖/掛牌、說明書並列。",
+            "• 服務：廣義含操作、設定、維護、故障排除；在附錄 I 中分散於「操作」「維護」「使用資訊」。"
+          ]
+        },
+        exercise52: {
+          title: "練習 5-2",
+          content: [
+            "請依最低要求條文檢視下列情境，工作設備是否符合規定：",
+            "",
+            "工作設備指令第 2.8 條（工作條件法令 7.7）：",
+            "「若工作設備的運動部件可能導致機械傷害，必須裝設護屏或裝置，以阻止進入危險區域，或在危險部件到達前停止其運動。」",
+            "",
+            "情境：",
+            "• 出料輸送帶週邊可不予考慮。",
+            "• 兩條輸送帶皆可觸及。",
+            "",
+            "答案：",
+            "不符合。多處危險運動（鏈條/鏈輪與皮帶/滾筒之擠壓）可觸及，且未裝設護屏或防護裝置。"
+          ]
+        },
+        exercise53: {
+          title: "練習 5-3",
+          content: [
+            "請依最低要求條文檢視下列情境。",
+            "工作設備是否符合規定：",
+            "",
+            "工作設備指令第 2.4 條（工作條件法令 7.16）：",
+            "「若依工作設備之危害與正常關閉時間有此必要，工作設備必須裝設緊急停止裝置。」",
+            "",
+            "情境：",
+            "• 折彎機控制盤上的綠色按鈕符合緊急停止裝置之控制要求。",
+            "",
+            "答案：",
+            "符合。該工作設備已裝設緊急停止裝置。",
+            "",
+            "附註：工作設備指令第 2.1 節未獲遵守。"
+          ]
+        },
         additionalRequirements: {
           title: "額外要求",
           content: [
@@ -304,6 +462,24 @@ const WorkEquipmentDirective = () => {
             "• 勞動資訊表",
             "• 歐洲標準"
           ]
+        },
+        exercise54: {
+          title: "練習 5-4",
+          content: [
+            "請回答下列問題：",
+            "",
+            "1. 何謂工作設備？",
+            "答案：工作設備指在工作場所使用的任何機械、設備、工具或裝置（工作設備指令 2009/104/EC 第2條）。例如：手工具、生產機械、堆高機、工業裝置。",
+            "",
+            "2. 請列舉工作設備指令所涵蓋的若干主題（規定）。",
+            "答案：涵蓋主題包括：服務；啟動/停止；強度/穩定性；移動部件；照明；溫度；警報；維護、安裝、（拆）組裝；警告；火災/爆炸；電氣（附件1－最低要求）。此外還有移動式工作設備、起重與吊裝設備、高處臨時作業的額外要求。",
+            "",
+            "3. 工作設備指令在荷蘭法律中哪裡可以找到？",
+            "答案：工作設備指令 (2009/104/EC) 已轉化進荷蘭的工作條件法（Arbowet）與工作條件法令（Arbobesluit），尤其是有關工作設備的第7章。",
+            "",
+            "4. 工作設備指令是針對工作設備的個別指令。其上位指令為何？",
+            "答案：上位指令為關於實施改善工人工作安全與健康措施的框架指令 89/391/EEC。雇主負有確保勞工安全與健康的責任；工作設備指令是該框架下的個別指令之一。"
+          ]
         }
       }
     }
@@ -319,12 +495,16 @@ const WorkEquipmentDirective = () => {
       structure: ChevronRight,
       stepByStep: CheckCircle,
       minimumRequirements: Shield,
+      question51: AlertTriangle,
+      exercise52: CheckCircle,
+      exercise53: CheckCircle,
       additionalRequirements: Shield,
       framework: BookOpen,
       employerObligations: Users,
       employeeObligations: Users,
       riskReduction: AlertTriangle,
-      dutchLegislation: BookOpen
+      dutchLegislation: BookOpen,
+      exercise54: CheckCircle
     };
     return icons[sectionKey] || BookOpen;
   };
