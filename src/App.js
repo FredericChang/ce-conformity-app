@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ChevronRight, FileText, CheckCircle, AlertTriangle, Info, Globe, Menu, X, Shield, GraduationCap, Wrench, Zap, Calculator } from 'lucide-react';
-import { RiskAssessment, TechnicalFile, Inspection, MachineSafetyTraining, MachineryModificationGuide, MachinerySafetyManual, TechnicalFileGuide, MachinerySafetyDocs, MachinerySafetyInfo, RiskAssessmentProcess, RiskReductionPrinciples, MachineSafetyCourse, SafetyDistanceCalculator, MachineGuards, FunctionalSafety, MachineAccessSafety, MachineSafetyModule, WorkEquipmentDirective, ChapterMaterials, ChapterHighlights, PracticeQuestions, getModulesByLanguage } from './modules';
+import { RiskAssessment, TechnicalFile, Inspection, MachineSafetyTraining, MachineryModificationGuide, MachinerySafetyManual, TechnicalFileGuide, MachinerySafetyDocs, MachinerySafetyInfo, RiskAssessmentProcess, RiskReductionPrinciples, MachineSafetyCourse, SafetyDistanceCalculator, MachineGuards, FunctionalSafety, MachineAccessSafety, MachineSafetyModule, WorkEquipmentDirective, ChapterMaterials, ChapterHighlights, PracticeQuestions, MachineryRegulation2023, ChapterAssignments, getModulesByLanguage } from './modules';
 
 const CEConformityApp = () => {
   const { t, i18n } = useTranslation();
@@ -321,6 +321,10 @@ const CEConformityApp = () => {
         return <ChapterHighlights />;
       case 'practiceQuestions':
         return <PracticeQuestions />;
+      case 'machineryRegulation2023':
+        return <MachineryRegulation2023 />;
+      case 'chapterAssignments':
+        return <ChapterAssignments />;
       default:
         return (
           <div className="text-center py-12">

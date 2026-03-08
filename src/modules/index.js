@@ -20,6 +20,8 @@ export { default as WorkEquipmentDirective } from './5-1';
 export { default as ChapterMaterials } from './ChapterMaterials';
 export { default as ChapterHighlights } from './ChapterHighlights';
 export { default as PracticeQuestions } from './PracticeQuestions';
+export { default as MachineryRegulation2023 } from './MachineryRegulation2023';
+export { default as ChapterAssignments } from './ChapterAssignments';
 
 // 模組配置 - 定義模組的元數據
 export const moduleConfig = {
