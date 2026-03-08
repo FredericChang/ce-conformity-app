@@ -17,6 +17,9 @@ export { default as FunctionalSafety } from './FunctionalSafety';
 export { default as MachineAccessSafety } from './4-6';
 export { default as MachineSafetyModule } from './4-7';
 export { default as WorkEquipmentDirective } from './5-1';
+export { default as ChapterMaterials } from './ChapterMaterials';
+export { default as ChapterHighlights } from './ChapterHighlights';
+export { default as PracticeQuestions } from './PracticeQuestions';
 
 // 模組配置 - 定義模組的元數據
 export const moduleConfig = {

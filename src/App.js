@@ -1,13 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ChevronRight, FileText, CheckCircle, AlertTriangle, Info, Globe, Menu, X, Shield, GraduationCap, Wrench, Zap, Calculator } from 'lucide-react';
-import { RiskAssessment, TechnicalFile, Inspection, MachineSafetyTraining, MachineryModificationGuide, MachinerySafetyManual, TechnicalFileGuide, MachinerySafetyDocs, MachinerySafetyInfo, RiskAssessmentProcess, RiskReductionPrinciples, MachineSafetyCourse, SafetyDistanceCalculator, MachineGuards, FunctionalSafety, MachineAccessSafety, MachineSafetyModule, WorkEquipmentDirective, getModulesByLanguage } from './modules';
+import { RiskAssessment, TechnicalFile, Inspection, MachineSafetyTraining, MachineryModificationGuide, MachinerySafetyManual, TechnicalFileGuide, MachinerySafetyDocs, MachinerySafetyInfo, RiskAssessmentProcess, RiskReductionPrinciples, MachineSafetyCourse, SafetyDistanceCalculator, MachineGuards, FunctionalSafety, MachineAccessSafety, MachineSafetyModule, WorkEquipmentDirective, ChapterMaterials, ChapterHighlights, PracticeQuestions, getModulesByLanguage } from './modules';
 
 const CEConformityApp = () => {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language || 'zh';
   const [activeSection, setActiveSection] = useState('overview');
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  useEffect(() => {
+    window.__setActiveSection = setActiveSection;
+    return () => { delete window.__setActiveSection; };
+  }, []);
 
   const InfoBox = ({ type, title, children, icon: Icon }) => {
     const typeStyles = {
@@ -310,6 +315,12 @@ const CEConformityApp = () => {
         return <Inspection />;
       case 'practical':
         return <WorkEquipmentDirective />;
+      case 'chapterMaterials':
+        return <ChapterMaterials />;
+      case 'chapterHighlights':
+        return <ChapterHighlights />;
+      case 'practiceQuestions':
+        return <PracticeQuestions />;
       default:
         return (
           <div className="text-center py-12">

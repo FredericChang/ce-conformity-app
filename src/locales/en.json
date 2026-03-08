@@ -29,7 +29,10 @@
     "functionalSafety": "Functional Safety SIL/PL",
     "machineAccessSafety": "Permanent Means of Access",
     "machineSafetyModule": "Start, Stop and Reset",
-    "technicalFileModule": "Technical File Module"
+    "technicalFileModule": "Technical File Module",
+    "chapterMaterials": "Chapter Materials",
+    "chapterHighlights": "Chapter Highlights",
+    "practiceQuestions": "Practice & Past Exam"
   },
   "overview": {
     "heading": "Overview: Integrate CE Process into Project Approach",

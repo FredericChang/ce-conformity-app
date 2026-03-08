@@ -29,7 +29,10 @@
     "functionalSafety": "功能安全 SIL/PL",
     "machineAccessSafety": "永久性通道設施",
     "machineSafetyModule": "啟動、停止和復位",
-    "technicalFileModule": "技術檔案模組"
+    "technicalFileModule": "技術檔案模組",
+    "chapterMaterials": "章節教材",
+    "chapterHighlights": "章節重點",
+    "practiceQuestions": "考古題與練習題"
   },
   "overview": {
     "heading": "總覽：將CE流程整合到專案方法中",
